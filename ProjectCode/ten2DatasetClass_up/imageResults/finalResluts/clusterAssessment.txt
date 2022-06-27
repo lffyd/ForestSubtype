@@ -1,0 +1,2 @@
+Silhouette width: 0.470
+DBI: 0.721
