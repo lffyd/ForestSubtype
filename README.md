@@ -9,7 +9,7 @@ An integrated learning approach for cancer subtype classification of breast canc
 - idconvert.zip        #Breast cancer data from the Sangerbox 3.0 platform.   Remember to unzip the dataset when using it.
 - breastPam50Classification.R    #PAM50 roughly layered.
 
-#### 	2.rojectCode
+#### 	2.ProjectCode
 
 - comparison        #This catalogue is a comparative experiment of the sparesk method.
 - dataset      		  #The catalogue is a data set.
