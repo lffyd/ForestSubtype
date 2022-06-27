@@ -1,4 +1,5 @@
 #author：fyd
+import sys
 
 from MainSteps import drawingData, resultsVisualization, toCluster, AE_Study
 from flag import Flags
@@ -10,10 +11,20 @@ Clustering 200-dimensional feature data
 '''
 if __name__ == '__main__':
     print("Loading feature data in...")
-    data = load_cluster_data(Flags)
-    print("Loading feature tags in...")
-    Y = load_cluster_y(Flags)
+    data = ""
+    Y = ""
+    try:
+        data = load_cluster_data(Flags)
+    except FileNotFoundError:
+        print("File:"+Flags.DATA_CLUSTER_FILE,"does not exist,Please run the main_jupyter.ipynb file first.")
+        sys.exit()
 
+    print("Loading feature tags in...")
+    try:
+        Y = load_cluster_y(Flags)
+    except FileNotFoundError:
+        print("File:"+Flags.DATA_CLUSTER_FILE_y,"does not exist,Please run the main_jupyter.ipynb file first.")
+        sys.exit()
     # Check if it has been trained based on the public dataset.
     my_file = Path("model/AE_model.h5")
     if my_file.is_file():
